@@ -2,9 +2,16 @@
 
 import gymnasium as gym
 
-from gymnasium.envs.toy_text.frozen_lake import generate_random_map
+from gym.envs.toy_text.frozen_lake import generate_random_map
 
-#create Enviroment
+# TODO
+def policy_evaluation(s, a):
+    pass
+
+#TODO
+def value_iteration(s):
+   pass
+
 
 env = gym.make("FrozenLake-v1", desc=generate_random_map(size=16), render_mode="human", is_slippery=True)
 
@@ -37,3 +44,4 @@ for _ in range(max_iter_number):
       observation, info = env.reset()
 
 env.close()
+
