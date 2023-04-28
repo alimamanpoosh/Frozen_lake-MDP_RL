@@ -53,7 +53,7 @@ max_iter_number = 1000
 rewards = []
 
 for episode in range(num_episodes):
-    state = env.reset()
+    state = env.reset()[0]
     step = 0
     done = False
     total_rewards = 0
@@ -63,10 +63,10 @@ for episode in range(num_episodes):
             action = np.argmax(qtable[state, :])
         else:
             action = env.action_space.sample()
-        new_state, reward, done, info = env.step(action)
+        new_state, reward, done1, done, info = env.step(action)
         max_new_state = np.max(qtable[new_state, :])
         qtable[state, action] = qtable[state, action] + learning_rate * (
-                reward + gamma * max_new_state - qtable[state, action])
+            int(reward) + gamma * int(max_new_state) - qtable[state, action])
         total_rewards += reward
         state = new_state
         if done:
@@ -105,7 +105,7 @@ for episode in range(1):
 
     for step in range(max_iter_number):
         action = np.argmax(qtable[state, :])
-        new_state, reward, done, info = env.step(action)
+        new_state, reward, done1, done, info = env.step(action)
         env.render()
         if done:
             print("number of steps", step)
