@@ -23,6 +23,6 @@ python main.py
 You can modify the maximum number of iterations and other parameters in the `Value_policy_iteration` function inside `main.py`.
 ## SARSA: FrozenLake-Reinforcement Learning
 
-This project implements the SARSA algorithm to train an agent in the FrozenLake-v1 environment from the OpenAI Gym. The agent aims to find the optimal policy for navigating a frozen lake, where it must reach the goal while avoiding holes. The Q-learning algorithm is used to learn the Q-values for each state-action pair and guide the agent's decision-making process during training.
+This part implements the SARSA algorithm to train an agent in the FrozenLake-v1 environment from the OpenAI Gym. The agent aims to find the optimal policy for navigating a frozen lake, where it must reach the goal while avoiding holes. The Q-learning algorithm is used to learn the Q-values for each state-action pair and guide the agent's decision-making process during training.
 
 Feel free to use, modify, and distribute this code for your own purposes.
